@@ -1,13 +1,16 @@
-from basic import *
-from ExcelOeffnenUndLesen import *
-from ExcelSchreiben import *
-from belegZaehlen import count
+
+from scripte.Variablen import *
+from scripte.ExcelOeffnenUndLesen import *
+from scripte.ExcelSchreiben import *
+from scripte.Reparaturnummer_extrahieren import *
 
 
-readSrc(srcFile, valList)
-print(len(valList))
+# Ab hier werden die Funktionen aufgerufen >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+readSrc(srcFile, dstList, maxColumn)
+writeRepNr(dstList, idx)
 
-count(valList,lstDbl)
 
-print(len(lstDbl))
+createDstFile(dstFile, dstList)
+input("Wir sind fertig 'ENTER' schliesst dieses Fenster ")
+
 
