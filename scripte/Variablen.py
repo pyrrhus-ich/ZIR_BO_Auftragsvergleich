@@ -3,11 +3,11 @@ from colorama import *
 init(autoreset=True)
 
 
-print("Ist das Source File geöffnet. Wenn nicht, bitte jetzt öffnen - Danach mit Enter bestätigen  " , end='')
+print("Ist das Source File geöffnet. Wenn nicht, bitte jetzt öffnen - Danach mit Enter bestätigen  \n" , end='')
 launch = input()
 # ANZUPASSENDE VARIABLEN <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-letzteSpalte = input("Gib den Buchstaben der letzten beschriebenen Spalte ein >>>  ").lower() # letzte befüllte Spalte 
-suchSpalte = input(" Gib den Buchstaben der Spalte ein, die die zu suchenden Werte enthält >>>  " ).lower()# Spalte in der nach der Reparaturnummer gesucht werden soll.
+letzteSpalte = input("Gib den Buchstaben der letzten beschriebenen Spalte ein >>>  \n").lower() # letzte befüllte Spalte 
+suchSpalte = input(" Gib den Buchstaben der Spalte ein, die die zu suchenden Werte enthält >>>  \n" ).lower()# Spalte in der nach der Reparaturnummer gesucht werden soll.
 
 
 # <<<<<<< Feste Variablen - Werden nicht geändert >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

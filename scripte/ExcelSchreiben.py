@@ -15,15 +15,17 @@ def createDstFile(dstFileName, baseList): #dstFile, resulList
     for row in baseList: #Hängt jeden Eintrag in der resultList an das neu erzeugt sheet
         ws.append(row)
 # Hier versuche ich die Spaltenbreite zu ermitteln um diese dann zu setzen
+    """
     columnA = 0
     for el in baseList:
         if len(el[0]) > columnA:
             columnA =len(el[0])
+    """
     #<<<<<<<<<< Hier beginnt die Formatierung des Excel Files >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     print("Wir starten das schön machen des Files")
     
     # Setzt die Spaltenbreiten
-    ws.column_dimensions['A'].width = columnA 
+    ws.column_dimensions['A'].width = 20
     ws.column_dimensions['B'].width = 18
     ws.column_dimensions['C'].width = 20
     ws.column_dimensions['D'].width = 50
@@ -40,5 +42,5 @@ def createDstFile(dstFileName, baseList): #dstFile, resulList
        
     wbDst.save(dstFileName) #Speichert das File
     wbDst.close()
-    print(Fore.GREEN + "Das schreiben des Ausgabefiles ist abgeschlossen. Es wird bereitgestellt in : " + dstFileName)   
+    print(Fore.GREEN + "Das schreiben des Ausgabefiles ist abgeschlossen. Es wird bereitgestellt in : {}\n".format(dstFileName))   
     print(Style.RESET_ALL, end="")#Setzt die Farbeinstellungen wieder zurück

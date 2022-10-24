@@ -15,7 +15,7 @@ def readSrc(src, dst, maxColumn):
     for value in ws.iter_rows(min_row=1, min_col=1,max_col=maxColumn, values_only=True):
             if value[0] is not None:
                 dst.append(list(value)) # Ganz wichtig das die values als Liste gespeichert werden, da sonst unveränderlich
-    print(Fore.GREEN + "Auslesen Source File ist beendet : readSrc()")
+    print(Fore.GREEN + "Auslesen Source File ist beendet : readSrc()\n")
     
 
 
