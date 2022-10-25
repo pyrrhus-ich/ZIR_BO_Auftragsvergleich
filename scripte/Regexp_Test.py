@@ -24,22 +24,23 @@ def rxRepNr(srcLst, idx, sap):  # srcList = Jede Line im Excel ist ein Listenele
                     matchResult = matchResult.capitalize()
                     #print("Match sollte jetzt Bindestrich haben {}".format(matchResult))
             else:
-                match = re.findall(r"\d{3}"" ?""-" " ?" "\d{5,6}", lineEl)
+                match = re.findall(r"\d{3}"" ?""-" " ?" "\d{5,6}", lineEl) # Suche nach Nr wo der Marktbuchstabe fehlt
                 if match:
                     matchResult = match[0]
-                    nummerSap = line[sap][1:]
-                    compare = matchResult[:3]
-                    if nummerSap == compare:
-                        matchResult = line[sap]+matchResult[3:]
+                    nummerSap = line[sap][1:] # die Zahlen der Sap Nr aus M199 wird 199
+                    compare = matchResult[:3] # die ersten 3 Stellen der gefundenen Nr
+                    if nummerSap == compare: # wenn die beiden gleich sind handelt es sich wahrscheinlich um eine Rep.Nr der der Buchstabe fehlt
+                        matchResult = line[sap]+matchResult[3:] # Dann verkette die SAP Nr des Marktes mit der gefundenen Nr ab dem Bindestrich M111 + -12345
                     else:                                              # Wenn es keinen Match gibt
                         matchResult = "1_Keine RepNr. gefunden"  
                 else:                                              # Wenn es keinen Match gibt
                     matchResult = "1_Keine RepNr. gefunden" 
-            matchResult = matchResult.capitalize()   
-            line.insert(0, matchResult)              # füge das neu zusammengebaute Element an Index 0 ein
-        else: 
-                    
-            line.insert(0, "1_Das zu durchsuchende Feld ist leer")            # Wenn das lineEl (Zeile 10)  leer ist füge an Index 0 der line den entsprechenden Text ein                
+           # matchResult = matchResult.capitalize()   # Damit der erste Buchstabe Groß geschrieben wird
+           # line.insert(0, matchResult)              # füge das neu zusammengebaute Element an Index 0 ein
+        else:                                        # wenn die Zeile leer ist       
+            matchResult = "1_Das zu durchsuchende Feld ist leer"          # Wenn das lineEl (Zeile 10)  leer ist füge an Index 0 der line den entsprechenden Text ein 
+        matchResult = matchResult.capitalize()   # Damit der erste Buchstabe Groß geschrieben wird
+        line.insert(0, matchResult)              # füge das neu zusammengebaute Element an Index 0 ein               
     srcLst[0][0] = "Suchergebnis"                                  # Ändere die Spaltenbezeichnung des Index 0
    
 
