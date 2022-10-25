@@ -11,11 +11,12 @@ def rxRepNr(srcLst, idx):  # srcList = Jede Line im Excel ist ein Listenelement 
         lineEl = line[idx]
         matchResult = ""
         if lineEl is not None:
+        
             searchList = lineEl.split(" ")                             # Trennt den Text bei jedem Freizeichen
             lenSearchList = len(searchList)                            # Anzahl der zu durchsuchenden Elemente
             countNoEl = 0                                              # Wird bei jedem nicht gefundenem Element 1 hochgezählt
             for el in searchList:
-                match = re.findall("^[MSms]" "\d{3}""-?""\d{5,6}", el) #Sucht alle Aufträge die mit großem oder kleinem m oder s anfangen und dann 3 Zahlen
+                match = re.findall("[MSms]" "\d{3}""-?""\d{5,6}", el) #Sucht alle Aufträge die mit großem oder kleinem m oder s anfangen und dann 3 Zahlen
                                                                        # gefolgt von einem oder keinem Bindestrich plus 5 oder 6 weitere Zahlen
                 if match :
                     matchResult = match[0].capitalize() # Macht den Anfangsbuchstaben immer Groß unabhängig davon ob er vorher schon Groß war
