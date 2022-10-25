@@ -23,6 +23,7 @@ def rxRepNr(srcLst, idx, sap):  # srcList = Jede Line im Excel ist ein Listenele
                     matchResult = ''.join(matchResult)   # füge die einzelnen Listenelement wieder zu einem String zusammen
                     matchResult = matchResult.capitalize()
                     #print("Match sollte jetzt Bindestrich haben {}".format(matchResult))
+            
             else:
                 match = re.findall(r"\d{3}"" ?""-" " ?" "\d{5,6}", lineEl) # Suche nach Nr wo der Marktbuchstabe fehlt
                 if match:
@@ -33,8 +34,9 @@ def rxRepNr(srcLst, idx, sap):  # srcList = Jede Line im Excel ist ein Listenele
                         matchResult = line[sap]+matchResult[3:] # Dann verkette die SAP Nr des Marktes mit der gefundenen Nr ab dem Bindestrich M111 + -12345
                     else:                                              # Wenn es keinen Match gibt
                         matchResult = "1_Keine RepNr. gefunden"  
+            
                 else:                                              # Wenn es keinen Match gibt
-                    matchResult = "1_Keine RepNr. gefunden" 
+                     matchResult = "1_Keine RepNr. gefunden" 
            # matchResult = matchResult.capitalize()   # Damit der erste Buchstabe Groß geschrieben wird
            # line.insert(0, matchResult)              # füge das neu zusammengebaute Element an Index 0 ein
         else:                                        # wenn die Zeile leer ist       

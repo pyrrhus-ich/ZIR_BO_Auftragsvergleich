@@ -1,8 +1,8 @@
-from scripte.Variablen import *
+from scripte.WWS_Retoure.Variablen_WWSRetoure import *
 from scripte.ExcelOeffnenUndLesen import *
 from scripte.ExcelSchreiben import *
-#from scripte.Reparaturnummer_extrahieren import *
-from scripte.Regexp_Test import *
+from scripte.WWS_Retoure.Regexp_WWSRetoure import *
+
 
 
 # Ab hier werden die Funktionen aufgerufen >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
