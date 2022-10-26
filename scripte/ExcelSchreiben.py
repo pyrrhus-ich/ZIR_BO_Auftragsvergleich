@@ -1,4 +1,3 @@
-from scripte.WWS_Retoure.Variablen_WWSRetoure import *
 import openpyxl as op
 from openpyxl.styles import PatternFill, Font
 from colorama import *
