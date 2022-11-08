@@ -5,6 +5,21 @@ init(autoreset=True)
 
 
 
+# liest das src File und speichert die Werte als Liste in einer Variablen ab
+# src = Sourcefile | dst = Variable die die Werte speichert
+def readSrc(src, dst, maxColumn):
+    print("Auslesen src File beginnt : readSrc()")
+    wb = op.load_workbook(src,data_only=True) # lädt das File
+    ws = wb.worksheets[0]
+    #schreibt die Werte in eine Liste wenn der erste value der Zeile nicht none ist
+    for value in ws.iter_rows(min_row=1, min_col=1,max_col=maxColumn, values_only=True):
+            if value[0] is not None:
+                dst.append(list(value)) # Ganz wichtig das die values als Liste gespeichert werden, da sonst unveränderlich
+                print(value)
+    print(Fore.GREEN + "Auslesen Source File ist beendet : readSrc()\n")
+    
+
+#Ab hier beginnt das Schreiben des Excel Files
 
 def createDstFile(dstFileName, baseList): #dstFile, resulList
     print("Beginne jetzt mit dem schreiben des dst Files createDstFile()")
@@ -43,3 +58,7 @@ def createDstFile(dstFileName, baseList): #dstFile, resulList
     wbDst.close()
     print(Fore.GREEN + "Das schreiben des Ausgabefiles ist abgeschlossen. Es wird bereitgestellt in : {}\n".format(dstFileName))   
     print(Style.RESET_ALL, end="")#Setzt die Farbeinstellungen wieder zurück
+
+
+ 
+

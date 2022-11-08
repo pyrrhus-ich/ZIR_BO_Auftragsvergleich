@@ -1,7 +1,7 @@
 import re
 from colorama import *
 init(autoreset=True)
-from ..HifsScripte import workWithMatch
+from .HifsScripte import hs_workWithMatch
 
 
  
@@ -12,7 +12,7 @@ def searchSR(srcLst, idx, resultList):
         match = re.findall(r"[MSms]""\d{3}""-""\d{5,6}", line[idx])
         if match:
             match = match[0]
-            workWithMatch(match, line, srcLst, resultList)
+            hs_workWithMatch(match, line, srcLst, resultList)
 
 # sucht nach dem Muster xxx-xxxxxx           
 def searchSRohneBuchstaben(srcLst, idx,resultList, sapIdx):
@@ -25,7 +25,7 @@ def searchSRohneBuchstaben(srcLst, idx,resultList, sapIdx):
             sapNr = line[sapIdx][1:4]
             if first3Match == sapNr:
                 match=line[sapIdx][:1]+ match
-                workWithMatch(match, line, srcLst, resultList)
+                hs_workWithMatch(match, line, srcLst, resultList)
                 
 
 

@@ -10,7 +10,7 @@ def srcListExcelInsertColumn(list, resultList):
 # Bearbeitet den Match Value | löscht die Zeile mit dem Match aus der srcList | Fügt die Zeile mit dem Match
 # in die Resultlist ein. So wird die srcList immer kürzer & Result immer länger
 # Argumente: matchValue - der mit Regex ermittelte Wert | line - die Zeile in der der Wert steht
-def workWithMatch(matchValue, line, srcLst, resLst):
+def hs_workWithMatch(matchValue, line, srcLst, resLst):
     matchValue = matchValue.capitalize() # Macht den Anfangsbuchstaben immer Groß unabhängig davon ob er vorher schon Groß war
     line[0]=matchValue
     resLst.append(line)
@@ -18,8 +18,8 @@ def workWithMatch(matchValue, line, srcLst, resLst):
 
 
 # druckt die Länge der beiden Listen aus. - Erfolgskontrolle 
-def printLen(srcLst, resLst):
+def hs_printLen(srcLst, resLst):
     src = len(srcLst)
     res = len(resLst)
-    print("Länge der SrcLst = {}".format(src))
-    print("Länge der resLst = {}\n".format(res))
+    print("Einzulesende Zeilen = {}".format(src))
+    print("Gefundene Reparaturnummern = {}\n".format(res))
